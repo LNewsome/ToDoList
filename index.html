@@ -7,7 +7,10 @@
       <form ng-submit="toDoAdd()">
         <input type="test" ng-model="todoInput" size="40" placeholder="Add Task">
         <input type="submit" value="Add New">
-      </form>  
+      </form>
+  <div ng-repeat="x in toDoList">
+    <input type="checkbox" ng-model="x.done"><span ng-blind="x.todoText"></span>
+  </div>
 
     </body>
 </html>
