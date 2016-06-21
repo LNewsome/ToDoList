@@ -11,6 +11,21 @@
   <div ng-repeat="x in toDoList">
     <input type="checkbox" ng-model="x.done"><span ng-blind="x.todoText"></span>
   </div>
+  <p><button ng-click="remove()"> Remove marked</button></p>
+  <script>
+  var app = angular.module('myApp', []);
+  app.controller('toDoCtrl', function($scope){
+    $scope.toDoList = [{toDoText:'',done:false}];
 
+    $scope.toDoAdd = funtion(){
+      var oldList = $scope.toDoList;
+      $scope.toDoLidt =[];
+      angular.forEach(oldList, function(x){
+        if (!x.done) $scope.toDoList.push(x);
+
+      });
+    };
+  });
+  </script>
     </body>
 </html>
